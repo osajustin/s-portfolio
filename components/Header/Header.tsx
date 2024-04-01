@@ -1,31 +1,38 @@
 import React from 'react';
-import { Group, Burger, Container, useMantineColorScheme, Button } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { Group, Container, useMantineColorScheme, Title, ActionIcon } from '@mantine/core';
 import { IconSunFilled } from '@tabler/icons-react';
 import classes from './Header.module.css';
+import { useRouter } from 'next/router';
 
 interface Link {
   link: string;
-  label: string | React.ReactElement; // Define label as either string or React element
+  label: any //string | React.ReactElement; //Throws error on key but works
 }
 const links: Link[] = [
   { link: '/Projects', label: 'Projects' },
   { link: '/Experience', label: 'Resume' },
   { link: '/Contact', label: 'Contact' },
-  { link: '', label: <IconSunFilled />},
 ];
 
 export function Header(): React.ReactElement {
-  const [opened, { toggle }] = useDisclosure(false);
-  
-  
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const router = useRouter(); // Get the router object from Next.js
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.link}
-      className={classes.link}
-      onClick={(event) => event.preventDefault()}
-    >
+    <a 
+        className={`${classes.link} ${colorScheme === 'light' ? classes.light : classes.dark}`} 
+        onClick={() => {
+            scrollToSection(link.link);
+            router.push(`#${link.link}`); 
+        }}
+        >
+
       {typeof link.label === 'string' ? link.label : link.label}
     </a>
   ));
@@ -33,13 +40,25 @@ export function Header(): React.ReactElement {
   return (
     <header className={classes.header}>
       <Container size="md">
-        <div className={classes.inner}>
-          <h1 aria-setsize={28}>JO.</h1>
+        <Container className={classes.inner}>
+          <Title className={`${classes.title} ${colorScheme === 'light' ? classes.light : classes.dark}`}>JO.</Title>
+          
           <Group gap={5} visibleFrom="sm">
             {items}
+            <ActionIcon
+                variant="transparent"
+                onClick={toggleColorScheme}
+                style={{ padding: 0 }}
+                >
+                    {/* Set Light/Dark Mode Icon Color */}
+                    {colorScheme === 'light' ? (
+                        <IconSunFilled style={{ marginRight: 5 }}  color='#1A1A1A'/>
+                    ) : (
+                        <IconSunFilled style={{ marginRight: 5 }} color='#FFFFFF'/>
+                    )}
+            </ActionIcon>
           </Group>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-        </div>
+        </Container>
       </Container>
     </header>
   );

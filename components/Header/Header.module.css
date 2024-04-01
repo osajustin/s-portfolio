@@ -1,26 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 .header {
-    height: rem(56px);
-    margin-bottom: rem(120px);
+    height: rem(123px);
     background-color: var(--mantine-color-body);
-    border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    font-family: 'Inter', sans-serif;
   }
   
   .inner {
-    height: rem(56px);
+    height: rem(59px);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+
+  .title {
+    color: #1A1A1A;
+    font-size: rem(24px);
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+  }
+
   .link {
     display: block;
     line-height: 1;
     padding: rem(8px) rem(12px);
     border-radius: var(--mantine-radius-sm);
     text-decoration: none;
-    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-    font-size: var(--mantine-font-size-sm);
-    font-weight: 500;
+    color: #1A1A1A;
+    font-size: rem(18px);
+    font-weight: 300;
   
     @mixin hover {
       background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
@@ -29,4 +37,12 @@
   
   .linkLabel {
     margin-right: rem(5px);
+  }
+
+  .light {
+    color: #1A1A1A;
+  }
+  
+  .dark {
+    color: #FFFFFF;
   }
