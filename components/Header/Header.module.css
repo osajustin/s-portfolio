@@ -33,8 +33,9 @@
     font-size: rem(18px);
     font-weight: 300;
   
-    @mixin hover {
-      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    &:hover {
+      background-color: #1F1E1E;
+      color: #FFFFFF; /* Change text color to white on hover */
     }
   }
   
