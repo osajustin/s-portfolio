@@ -24,6 +24,7 @@ export function Header(): React.ReactElement {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
   const items = links.map((link) => (
     <a 
         className={`${classes.link} ${colorScheme === 'light' ? classes.light : classes.dark}`} 
@@ -41,7 +42,9 @@ export function Header(): React.ReactElement {
     <header className={classes.header}>
       <Container size="md">
         <Container className={classes.inner}>
-          <Title className={`${classes.title} ${colorScheme === 'light' ? classes.light : classes.dark}`}>JO.</Title>
+          <Title className={`${classes.title} ${colorScheme === 'light' ? classes.light : classes.dark}`}>
+            JO.
+        </Title>
           
           <Group gap={5} visibleFrom="sm">
             {items}

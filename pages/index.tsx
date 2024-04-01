@@ -1,5 +1,3 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import { Header } from '@/components/Header/Header';
 import { Home } from '@/components/Home/Home';
 import { Experience } from '@/components/Experience/Experience';
