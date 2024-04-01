@@ -2,7 +2,6 @@
 
 .container {
     margin-top: rem(200px);
-    height: rem(360px);
     background-color: var(--mantine-color-body);
     font-family: 'Inter', sans-serif;
   }

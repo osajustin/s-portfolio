@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Container, Group, List, Title, useMantineColorScheme } from '@mantine/core';
+import { Button, Container, Divider, Group, List, Title, useMantineColorScheme } from '@mantine/core';
 import classes from './Experience.module.css';
 
 interface Experience {
@@ -117,6 +117,7 @@ export function Experience() {
             ))}
           </List>
         </>
+        <Divider my="sm" />
       </Container>
     </Container>
   );
