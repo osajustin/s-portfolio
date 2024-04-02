@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Grid, Group, Title } from '@mantine/core';
 import { IconMailFilled, IconBrandLinkedin ,IconBrandGithub, IconBrandYoutubeFilled } from '@tabler/icons-react';
+import classes from './Contact.module.css';
+
 
 interface ContactButton {
   text: string;
@@ -38,7 +40,7 @@ export function Contact() {
     <>
       <Grid grow>
         <Grid.Col span="auto">
-          <Title>Contact</Title>
+          <Title className={classes.title}>Contact</Title>
         </Grid.Col>
         
 
@@ -48,10 +50,10 @@ export function Contact() {
               <Button
                 key={experience.text}
                 variant="outline"
-                color="rgba(0, 0, 0, 1)" 
+                color="#C6C6C6" 
                 size="md"
                 onClick={() => handleExperienceClick(index)}
-                className={activeExperienceIndex === index ? 'active' : ''}
+                className={`${classes.button} ${activeExperienceIndex === index ? 'active' : ''}`}
                 leftSection={experience.icon}
               >
                 {experience.text}

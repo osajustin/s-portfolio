@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+.container {
+    margin-top: rem(200px);
+    background-color: var(--mantine-color-body);
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .inner {
+    height: rem(59px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    color: #1A1A1A;
+    font-size: rem(18px);
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    /* margin-bottom: rem(16px); */
+  }
+
+  .image {
+    width: rem(511px);
+    height: rem(338px);
+    border-radius: rem(4px);
+  }
+
+  .description {
+    color: #1A1A1A;
+    font-size: rem(18px);
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: rem(61px);
+  }
+
+  .projectTitle {
+    color: #1A1A1A;
+    font-size: rem(24px);
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .projectDescription {
+    color: #1A1A1A;
+    font-size: rem(16px);
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .projectTools {
+    color: #004E93;
+    font-size: rem(14px);
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .button {
+    color: #1A1A1A;
+    font-size: rem(18px);
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .selected {
+  background-color: #1F1E1E;
+  color: #FFFFFF;
+}
+
+.link:hover,
+.link.selected:hover {
+  background-color: #1F1E1E;
+  color: #FFFFFF;
+}
+
+  .light {
+    color: #1A1A1A;
+  }
+  
+  .dark {
+    color: #FFFFFF;
+  }
